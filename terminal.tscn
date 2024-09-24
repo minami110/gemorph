@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm6qnvbk3ncer"]
+
+[ext_resource type="Script" path="res://terminal.gd" id="1_3c280"]
+[ext_resource type="FontFile" uid="uid://cb00je8u2k8qf" path="res://fonts/misaki_gothic_2nd.ttf" id="2_4ehcw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2rdv2"]
+font = ExtResource("2_4ehcw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2wgw"]
+bg_color = Color(0, 0, 0, 0.227451)
+
+[node name="Terminal" type="CanvasLayer"]
+script = ExtResource("1_3c280")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Console" type="TextEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_4ehcw")
+theme_override_font_sizes/font_size = 14
+text = "Log
+Log
+Log"
+editable = false
+
+[node name="TargetName" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "None"
+label_settings = SubResource("LabelSettings_2rdv2")
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/caret_color = Color(0.439049, 0.439049, 0.439049, 1)
+theme_override_constants/caret_width = 1
+theme_override_fonts/font = ExtResource("2_4ehcw")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h2wgw")
